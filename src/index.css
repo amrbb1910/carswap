@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(163, 255, 18, 0.16), transparent 28rem),
+    radial-gradient(circle at 84% 6%, rgba(33, 212, 253, 0.13), transparent 26rem),
+    radial-gradient(circle at 70% 78%, rgba(255, 122, 26, 0.1), transparent 30rem),
+    #05070a;
+  color: #f8fafc;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: rgba(163, 255, 18, 0.32);
+  color: #ffffff;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .section-kicker {
+    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm font-semibold text-lime;
+  }
+
+  .section-title {
+    @apply max-w-3xl text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg;
+  }
+
+  .glass-card {
+    @apply rounded-lg border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/20 backdrop-blur-xl;
+  }
+
+  .soft-card {
+    @apply rounded-lg border border-white/10 bg-graphite/80 shadow-xl shadow-black/20;
+  }
+
+  .accent-ring {
+    @apply ring-1 ring-lime/25;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-lime/70 focus:ring-2 focus:ring-lime/20;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-black text-ink transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-lime/50 focus:ring-offset-2 focus:ring-offset-ink;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-cyan/60 hover:bg-cyan/10 focus:outline-none focus:ring-2 focus:ring-cyan/40 focus:ring-offset-2 focus:ring-offset-ink;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
